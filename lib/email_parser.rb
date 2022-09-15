@@ -10,11 +10,11 @@ class EmailAddressParser
 
 
     def initialize (email)
-        @email = email.split
-        @email.map {|x| if x[x.length-1]=="," 
-            x[x.length-1]="" 
-        end}
-        @email = @email.uniq
+        @email = email.gsub(",","").split(" ").uniq
+        # @email.map {|x| if x[x.length-1]=="," 
+        #     x[x.length-1]="" 
+        # end}
+
 
     end
 
